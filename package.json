@@ -1,0 +1,25 @@
+{
+  "name": "learning-threejs",
+  "version": "1.0.0",
+  "description": "Just one of the things I'm learning. <https://github.com/hchiam/learning>",
+  "main": "index.js",
+  "scripts": {
+    "run": "http-server . -p 8000",
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hchiam/learning-threejs.git"
+  },
+  "author": "hchiam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hchiam/learning-threejs/issues"
+  },
+  "homepage": "https://github.com/hchiam/learning-threejs#readme",
+  "dependencies": {
+    "http-server": "^0.12.3",
+    "parcel-bundler": "^1.12.4"
+  }
+}
