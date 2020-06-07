@@ -9,3 +9,12 @@ Note: three.js changes really fast. Check what release number version you're usi
 ## Notes on running locally
 
 <https://threejs.org/docs/#manual/en/introduction/How-to-run-things-locally>
+
+```bash
+npm install
+npm start
+```
+
+## WebGL
+
+<https://github.com/hchiam/learning-webgl>

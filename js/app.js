@@ -1,44 +1,28 @@
-// Get a reference to the container element that will hold our scene
+// create three.js scene:
 const container = document.querySelector("#scene-container");
-
-// create a Scene
 const scene = new THREE.Scene();
-
-// Set the background color
 scene.background = new THREE.Color("skyblue");
 
-// Create a Camera
-const fov = 35; // AKA Field of View
+// create camera:
+const fieldOfView = 35;
 const aspect = container.clientWidth / container.clientHeight;
 const near = 0.1; // the near clipping plane
 const far = 100; // the far clipping plane
-
-const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
-
+const camera = new THREE.PerspectiveCamera(fieldOfView, aspect, near, far);
 // every object is initially created at ( 0, 0, 0 )
 // we'll move the camera back a bit so that we can view the scene
 camera.position.set(0, 0, 10);
 
-// create a geometry
+// mesh <- geometry and material
 const geometry = new THREE.BoxBufferGeometry(2, 2, 2);
-
-// create a default (white) Basic material
-const material = new THREE.MeshBasicMaterial();
-
-// create a Mesh containing the geometry and material
+const material = new THREE.MeshBasicMaterial(); // default white basic material that doesn't need lighting
 const mesh = new THREE.Mesh(geometry, material);
-
-// add the mesh to the scene
 scene.add(mesh);
 
-// create the renderer
 const renderer = new THREE.WebGLRenderer();
-
 renderer.setSize(container.clientWidth, container.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
-
-// add the automatically created <canvas> element to the page
+// add renderer to container:
 container.appendChild(renderer.domElement);
-
-// render, or 'create a still image', of the scene
+// render scene and camera:
 renderer.render(scene, camera);
