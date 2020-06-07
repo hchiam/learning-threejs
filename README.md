@@ -18,3 +18,7 @@ npm start
 ## WebGL
 
 <https://github.com/hchiam/learning-webgl>
+
+## First scene tutorial
+
+<https://discoverthreejs.com/book/first-steps/first-scene>
