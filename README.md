@@ -27,3 +27,9 @@ npm start
 ## First scene tutorial
 
 <https://discoverthreejs.com/book/first-steps/first-scene>
+
+## Fireship tutorial
+
+<https://www.youtube.com/watch?v=Q7AOvWpIVHU>
+
+<https://github.com/hchiam/threejs-scroll-animation-demo>
