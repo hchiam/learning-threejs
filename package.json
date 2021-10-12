@@ -4,6 +4,7 @@
   "description": "Just one of the things I'm learning. <https://github.com/hchiam/learning>",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run start",
     "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
