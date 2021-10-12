@@ -1,7 +1,9 @@
 // canvas <- renderer <- scene, camera, mesh
 // mesh <- geometry, material
 let mesh;
-const camera = new THREE.PerspectiveCamera(80, 1, 0.1, 10000);
+const aspectRatio =
+  document.documentElement.clientWidth / document.documentElement.clientHeight;
+const camera = new THREE.PerspectiveCamera(100, aspectRatio, 0.1, 10000);
 const scene = new THREE.Scene();
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -16,8 +18,8 @@ setUpKeyEvents();
 
 function setUpMesh() {
   const myMaterial = new THREE.MeshPhongMaterial({
-    color: new THREE.Color("red"),
-    emissive: new THREE.Color("blue"),
+    color: new THREE.Color("lime"),
+    emissive: new THREE.Color("green"),
     specular: new THREE.Color("white"),
     shininess: 10,
     shading: THREE.FlatShading,
@@ -47,23 +49,26 @@ function setUpCamera() {
 function setUpScene() {
   scene.add(camera);
 
-  const L1 = new THREE.PointLight(0xffffff, 1);
-  L1.position.z = 100;
-  L1.position.y = 100;
-  L1.position.x = 100;
-  scene.add(L1);
+  const light1 = new THREE.PointLight(0xffffff, 1);
+  light1.position.z = 100;
+  light1.position.y = 100;
+  light1.position.x = 100;
+  scene.add(light1);
 
-  const L2 = new THREE.PointLight(0xffffff, 0.8);
-  L2.position.z = 200;
-  L2.position.y = 50;
-  L2.position.x = -100;
-  scene.add(L2);
+  const light2 = new THREE.PointLight(0xffffff, 0.8);
+  light2.position.z = 200;
+  light2.position.y = 50;
+  light2.position.x = -100;
+  scene.add(light2);
 
   scene.add(mesh);
 }
 
 function setUpRenderer() {
-  renderer.setSize(700, 700);
+  renderer.setSize(
+    document.documentElement.clientWidth,
+    document.documentElement.clientHeight
+  );
 
   function render() {
     requestAnimationFrame(render);
@@ -111,8 +116,9 @@ function setUpKeyEvents() {
       case 83:
         mesh.position.y -= ySpeed;
         break;
-      case "SpaceBar":
+      case "Space":
       case " ":
+      case 32:
         mesh.position.set(0, 0, 0);
         break;
     }
