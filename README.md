@@ -28,6 +28,10 @@ npm start
 
 <https://discoverthreejs.com/book/first-steps/first-scene>
 
+## CodePen `IcosahedronGeometry` demo
+
+<https://codepen.io/hchiam/pen/GRvgeLN>
+
 ## Fireship tutorial
 
 <https://www.youtube.com/watch?v=Q7AOvWpIVHU>
