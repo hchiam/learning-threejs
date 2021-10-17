@@ -4,6 +4,11 @@ body {
   background: #333;
   color: white;
   text-align: center;
+  transition: 0.2s background;
+}
+
+.collision-detected {
+  background: maroon;
 }
 
 h1 {
