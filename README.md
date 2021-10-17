@@ -35,3 +35,11 @@ npm start
 <https://www.youtube.com/watch?v=Q7AOvWpIVHU>
 
 <https://github.com/hchiam/threejs-scroll-animation-demo>
+
+## Consider using a physics plugin
+
+<https://github.com/chandlerprall/Physijs>
+
+<https://github.com/kripken/ammo.js>
+
+<https://github.com/mrdoob/three.js/blob/master/examples/physics_ammo_break.html>
