@@ -1,14 +1,11 @@
-window.Keys = Object.freeze({
-  // key: value (value = opposite of key)
-  UP: "DOWN",
-  DOWN: "UP",
-  LEFT: "RIGHT",
-  RIGHT: "LEFT",
-  HOME: "HOME",
-});
-
 // canvas <- renderer <- scene, camera, mesh
 // mesh <- geometry, material
+const {
+  setUpKeyEvents,
+  reverseLastKeyPress,
+  keyPressIntervalTimer,
+  keyPressTimeoutTimer,
+} = require("./helpers/keyboardControl.js");
 let mesh;
 let mesh2;
 let mesh3;
@@ -23,16 +20,10 @@ const renderer = new THREE.WebGLRenderer({
 });
 const canvas = document.querySelector("#scene-container");
 
-const xSpeed = 10;
-const ySpeed = 10;
-let lastKeyPress;
-let intervalTimer;
-let timeoutTimer;
-
 setUpMesh();
 setUpCanvas();
 
-setUpKeyEvents();
+setUpKeyEvents(mesh);
 
 function setUpMesh() {
   const myMaterial = new THREE.MeshPhongMaterial({
@@ -150,118 +141,13 @@ function setUpRenderer() {
       detectCollision(mesh, mesh2) || detectCollision(mesh, mesh3);
     signalCollision(haveCollision);
     if (haveCollision) {
-      clearInterval(intervalTimer);
-      clearTimeout(timeoutTimer);
-      reverseLastKeyPress();
+      clearInterval(keyPressIntervalTimer);
+      clearTimeout(keyPressTimeoutTimer);
+      reverseLastKeyPress(mesh);
     }
   }
 
   render();
-}
-
-function setUpKeyEvents() {
-  // movement - please calibrate these values
-  // TODO: smoother motion with tweening? or CSS magic? or just continue a sequence of 1-steps after keypress?
-
-  document.addEventListener(
-    "keydown",
-    (event) => {
-      smoothen(() => {
-        onDocumentKeyDown(event);
-      });
-    },
-    false
-  );
-  function onDocumentKeyDown(event) {
-    const key = event.code || event.key || event.keyCode || event.which;
-    switch (key) {
-      case "ArrowLeft":
-      case "KeyA":
-      case "a":
-      case 37:
-      case 65:
-        goLeft();
-
-        break;
-      case "ArrowRight":
-      case "KeyD":
-      case "d":
-      case 39:
-      case 68:
-        goRight();
-        break;
-      case "ArrowUp":
-      case "KeyW":
-      case "w":
-      case 38:
-      case 87:
-        goUp();
-        break;
-      case "ArrowDown":
-      case "KeyS":
-      case "s":
-      case 40:
-      case 83:
-        goDown();
-        break;
-      case "Space":
-      case " ":
-      case 32:
-        goHome();
-        break;
-    }
-  }
-}
-
-function goLeft() {
-  mesh.position.x -= xSpeed;
-  lastKeyPress = Keys.LEFT;
-}
-function goRight() {
-  mesh.position.x += xSpeed;
-  lastKeyPress = Keys.RIGHT;
-}
-function goUp() {
-  mesh.position.y += ySpeed;
-  lastKeyPress = Keys.UP;
-}
-function goDown() {
-  mesh.position.y -= ySpeed;
-  lastKeyPress = Keys.DOWN;
-}
-function goHome() {
-  mesh.position.set(0, 0, 0);
-  lastKeyPress = Keys.HOME;
-}
-
-function smoothen(action) {
-  clearInterval(intervalTimer);
-  clearTimeout(timeoutTimer);
-  intervalTimer = setInterval(() => {
-    action();
-  }, 10);
-  timeoutTimer = setTimeout(() => {
-    clearInterval(intervalTimer);
-  }, 70);
-}
-
-function reverseLastKeyPress() {
-  switch (lastKeyPress) {
-    case Keys.LEFT:
-      goRight();
-      break;
-    case Keys.RIGHT:
-      goLeft();
-      break;
-    case Keys.UP:
-      goDown();
-      break;
-    case Keys.DOWN:
-      goUp();
-      break;
-  }
-
-  lastKeyPress = null;
 }
 
 function detectCollision(firstObject, secondObject) {
