@@ -36,6 +36,10 @@ npm start
 
 <https://github.com/hchiam/threejs-scroll-animation-demo>
 
+## Minimal car tutorial
+
+<https://www.freecodecamp.org/news/three-js-tutorial/>
+
 ## Consider using a physics plugin
 
 <https://github.com/chandlerprall/Physijs>
