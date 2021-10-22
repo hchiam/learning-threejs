@@ -44,6 +44,10 @@ npm start
 
 <https://github.com/mrdoob/three.js/blob/master/examples/physics_ammo_break.html>
 
+## Pathfinding
+
+<https://github.com/donmccurdy/three-pathfinding>
+
 ## Investigate researching how to incorporate into Next.js website
 
 <https://github.com/pmndrs/react-three-next>
