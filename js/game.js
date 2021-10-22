@@ -1,11 +1,12 @@
-// canvas <- renderer <- scene, camera, mesh
-// mesh <- geometry, material
 const {
   setUpKeyEvents,
   reverseLastKeyPress,
   keyPressIntervalTimer,
   keyPressTimeoutTimer,
 } = require("./helpers/keyboardControl.js");
+
+// canvas <- renderer <- scene, camera, mesh
+// mesh <- geometry, material
 let mesh;
 let mesh2;
 let mesh3;

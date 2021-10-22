@@ -9,12 +9,16 @@
  * https://codepen.io/HunorMarton/pen/qBqzQOJ
  */
 
+const { setUpKeyEvents } = require("./helpers/keyboardControl.js");
+
 const scene = new THREE.Scene();
 const car = createCar();
 scene.add(car);
 setUpLights(scene);
 const camera = createCamera();
 setUpRenderer(scene, camera, car);
+
+setUpKeyEvents({ mesh: car, speedX: 5, speedY: 5 });
 
 function setUpLights(scene) {
   const ambientLight = new THREE.AmbientLight("white", 0.6);
@@ -27,7 +31,7 @@ function setUpLights(scene) {
 
 function createCamera() {
   const aspectRatio = window.innerWidth / window.innerHeight;
-  const cameraWidth = 150;
+  const cameraWidth = 250;
   const cameraHeight = cameraWidth / aspectRatio;
   const camera = new THREE.OrthographicCamera(
     cameraWidth / -2, // left
@@ -37,7 +41,7 @@ function createCamera() {
     0, // near plane
     1000 // far plane
   );
-  camera.position.set(200, 200, 200);
+  camera.position.set(70, 70, 200);
   camera.lookAt(0, 10, 0);
   return camera;
 }
@@ -48,7 +52,7 @@ function setUpRenderer(scene, camera, car) {
   renderer.render(scene, camera);
 
   renderer.setAnimationLoop(() => {
-    car.rotation.y -= 0.007;
+    // car.rotation.y -= 0.007;
     renderer.render(scene, camera);
   });
 

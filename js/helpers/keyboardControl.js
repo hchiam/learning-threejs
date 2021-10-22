@@ -6,14 +6,17 @@ window.Keys = Object.freeze({
   RIGHT: "LEFT",
   HOME: "HOME",
 });
-const xSpeed = 10;
-const ySpeed = 10;
+let xSpeed = 10;
+let ySpeed = 10;
 let lastKeyPress;
 let keyPressIntervalTimer;
 let keyPressTimeoutTimer;
 
-function setUpKeyEvents(mesh) {
+function setUpKeyEvents({ mesh, speedX, speedY }) {
   // TODO: smoother motion with tweening? or CSS magic? or just continue a sequence of 1-steps after keypress?
+
+  if (speedX) xSpeed = speedX;
+  if (speedY) ySpeed = speedY;
 
   document.addEventListener(
     "keydown",
@@ -118,6 +121,8 @@ function reverseLastKeyPress(mesh) {
 }
 
 module.exports = {
+  xSpeed,
+  ySpeed,
   lastKeyPress,
   keyPressIntervalTimer,
   keyPressTimeoutTimer,
