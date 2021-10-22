@@ -40,6 +40,8 @@ npm start
 
 <https://www.freecodecamp.org/news/three-js-tutorial/>
 
+<https://codepen.io/HunorMarton/pen/qBqzQOJ>
+
 ## Consider using a physics plugin
 
 <https://github.com/chandlerprall/Physijs>
