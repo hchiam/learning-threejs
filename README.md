@@ -57,3 +57,9 @@ npm start
 ## Investigate researching how to incorporate into Next.js website
 
 <https://github.com/pmndrs/react-three-next>
+
+## Transparent Glass and Plastic
+
+<https://tympanus.net/codrops/2021/10/27/creating-the-effect-of-transparent-glass-and-plastic-in-three-js/>
+
+<https://github.com/kellymilligan/codrops-oct-2021-final/>
