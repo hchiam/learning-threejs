@@ -62,7 +62,7 @@ npm start
 
 <https://tympanus.net/codrops/2021/10/27/creating-the-effect-of-transparent-glass-and-plastic-in-three-js/>
 
-<https://github.com/kellymilligan/codrops-oct-2021-final/tree/14fed1388e6d9a065c77e36cd9a95d1db77c184f/13>
+<https://github.com/kellymilligan/codrops-oct-2021-final/blob/14fed1388e6d9a065c77e36cd9a95d1db77c184f/13/src/index.js>
 
 <https://codesandbox.io/s/13-p8kfe>
 
