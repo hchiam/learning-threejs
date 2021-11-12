@@ -62,4 +62,12 @@ npm start
 
 <https://tympanus.net/codrops/2021/10/27/creating-the-effect-of-transparent-glass-and-plastic-in-three-js/>
 
-<https://github.com/kellymilligan/codrops-oct-2021-final/>
+<https://github.com/kellymilligan/codrops-oct-2021-final/tree/14fed1388e6d9a065c77e36cd9a95d1db77c184f/13>
+
+<https://codesandbox.io/s/13-p8kfe>
+
+- transmission -> see-through
+- thickness -> refraction
+- roughness -> opacity
+- clearcoat and normal stuff -> ice-like texture roughness
+- bloom post-processing stuff -> shine
