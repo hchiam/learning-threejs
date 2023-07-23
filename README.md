@@ -71,3 +71,9 @@ npm start
 - roughness -> opacity
 - clearcoat and normal stuff -> ice-like texture roughness
 - bloom post-processing stuff -> shine
+
+## Demo of ThreeJS/WebGL Blender 3D Model + Rotation + clicking (works in desktop + mobile)
+
+This is a combination of a couple of forked demos. Has a Three.js/WebGL demo displaying a simple Blender 3D model that can be rotated.
+
+https://codepen.io/hchiam/pen/zYMaovN
