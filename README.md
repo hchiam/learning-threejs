@@ -13,6 +13,15 @@ Note: three.js changes really fast. Check what release number version you're usi
 - canvas <- renderer <- scene, camera, mesh
 - mesh <- geometry, material
 
+## Playing with three.js in-browser editor
+
+https://threejs.org/editor/
+
+Examples > Pong, and then you can:
+- look at code: SCENE > SCRIPT > Edit
+- play the game: PROJECT > PLAY
+- export the HTML and JS for the game: PROJECT > PUBLISH
+
 ## Notes on running locally
 
 <https://threejs.org/docs/#manual/en/introduction/How-to-run-things-locally>
